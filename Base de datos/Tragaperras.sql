@@ -1,4 +1,4 @@
-﻿-- --------------------------------------------------------
+-- --------------------------------------------------------
 -- Host:                         127.0.0.1
 -- Versión del servidor:         10.1.31-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win32
@@ -22,17 +22,33 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Añadir_Saldo`(
 	IN `Saldo_Sum` DOUBLE,
 	IN `DNI` VARCHAR(9)
 
+
+
+
 )
 BEGIN
 DECLARE Saldo_T DOUBLE;
 DECLARE saldo_act  DOUBLE;
- SET Saldo_T = (SELECT saldo FROM saldo_total WHERE `DNI`=DNI);
+ SET Saldo_T = (SELECT saldo FROM tragaperras.usuarios WHERE `DNI`=DNI);
  Set saldo_act=Saldo_t+Saldo_Sum;
-UPDATE saldo_total SET saldo=saldo_act WHERE `DNI`=DNI;
-SELECT saldo FROM saldo_total;
+UPDATE tragaperras.usuarios SET saldo=saldo_act WHERE `DNI`=DNI;
+SELECT saldo FROM tragaperras.usuarios;
 END//
 DELIMITER ;
 
+-- Volcando estructura para tabla tragaperras.maquina
+CREATE TABLE IF NOT EXISTS `maquina` (
+  `ID` int(4) NOT NULL,
+  `DNI` varchar(9) NOT NULL,
+  `Dinero Perdido` double NOT NULL,
+  `Dinero Ganado` double NOT NULL,
+  `Total_Apostado` double NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `maquina_usuarios` (`DNI`),
+  CONSTRAINT `maquina_usuarios` FOREIGN KEY (`DNI`) REFERENCES `usuarios` (`DNI`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- La exportación de datos fue deseleccionada.
 -- Volcando estructura para procedimiento tragaperras.Restar_Saldo
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Restar_Saldo`(
@@ -42,34 +58,28 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Restar_Saldo`(
 ,
 	IN `DNI` VARCHAR(9)
 
+
+
 )
 BEGIN
 DECLARE Saldo_T DOUBLE;
 DECLARE saldo_act  DOUBLE;
- SET Saldo_T = (SELECT saldo FROM saldo_total WHERE `DNI`=DNI);
+ SET Saldo_T = (SELECT saldo FROM tragaperras.usuarios WHERE `DNI`=DNI);
  Set saldo_act=Saldo_t-Saldo_Rest;
-UPDATE saldo_total SET saldo=saldo_act WHERE `DNI`=DNI;
-SELECT saldo FROM saldo_total;
+UPDATE tragaperras.usuarios SET saldo=saldo_act WHERE `DNI`=DNI;
+SELECT saldo FROM tragaperras.usuarios;
 END//
 DELIMITER ;
 
--- Volcando estructura para tabla tragaperras.saldo_total
-CREATE TABLE IF NOT EXISTS `saldo_total` (
-  `DNI` varchar(9) NOT NULL,
-  `saldo` double NOT NULL,
-  PRIMARY KEY (`DNI`),
-  CONSTRAINT `Usuarios_Saldo` FOREIGN KEY (`DNI`) REFERENCES `usuarios` (`DNI`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla tragaperras.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `DNI` varchar(9) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
+  `Saldo` double NOT NULL,
   `1ºApellido` varchar(50) NOT NULL,
   `2ºApellido` varchar(50) NOT NULL,
   `UserName` varchar(10) NOT NULL,
-  `Telefono` varchar(9) NOT NULL,
+  `Telefono` int(9) NOT NULL,
   `E-mail` varchar(50) NOT NULL,
   `Contraseña` varchar(50) NOT NULL,
   PRIMARY KEY (`DNI`)
