@@ -1,0 +1,152 @@
+#general {
+	width: 905px;
+	margin: 15px auto; 
+	text-align: center;	
+}
+
+#cabecera {
+	width: 860px;
+	height: 175px;
+	background-image: url(imagenCabecera.gif);
+	border: 1px solid #999999;
+	padding: 20px;
+	box-shadow: 1px 1px 1px #000000;
+}
+
+#seccion1 {
+	width: 904px;
+	padding-top: 10px;
+	background-image: url(segundaCabecera.jpg);
+}
+
+.nombreEquipo {
+	margin-left: 115px;
+	color: white;
+	font-size: 70px;
+	border-radius: 5px;
+}
+
+.nombreEquipo:hover{
+	color: black;
+	font-size: 70px;
+	border-radius: 5px;
+}
+
+
+.BotonInsta{
+	padding-right: 10px;
+	float: right;
+	padding-top: -1000px;
+	text-align: right;
+	width: 50px;
+	height: 50px;
+}
+
+.BotonYout {
+	padding-right: 10px;
+	float: right;
+	text-align: right;
+	width: 50px;
+	height: 50px;
+}
+
+#botones {
+	margin-top: 10px;
+}
+
+#navegar {
+	list-style: none;
+	margin-right:30px;
+	padding-right: 5px;														
+	margin-left: 30px; 
+	padding-left: 5px;
+	font: bold 14px tines new roman, sans-serif;
+
+}
+
+#seccion2 {
+	width: 904px;
+	padding-top: 10px;
+	background-image: url(segundaCabecera.jpg);
+}
+
+nav {
+	padding: 5px 15px;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
+nav ul li {
+	display: inline-block;
+	list-style: none;
+	margin-right:50px;
+	padding-right: 5px;														 
+	padding-left: 5px;
+	font: bold 14px verdana, sans-serif;
+}
+
+li:hover {
+	background-color: white;
+	border-radius: 5px;
+}
+
+.nav {
+	overflow: hidden;
+}
+
+.nav .menu_general {
+	list-style: none;
+}
+
+.nav .menu_general>li {
+	padding: 1em;
+	width: 15%;
+	float: left;
+}
+
+.nav .menu_general>li>a {
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #7B615C;
+	text-decoration: none;
+}
+
+.nav .menu_general>li:hover, .nav .menu_general>li>.submenus>li:hover {
+	background: white;
+	cursor: pointer;
+}
+
+.nav .menu_general li .submenus{
+	position: absolute;
+	background-color: #EECDC6;
+	width: 200px;
+	list-style: none;
+	margin-top: 1em;
+	display: none;
+	border-radius: 5px;
+
+}
+
+.nav .menu_general li:hover>.submenus {
+	display: block;
+	text-align: left;
+}
+
+.nav .menu_general li .submenus li {
+	padding: 1em;
+	text-align: center;
+}
+
+
+#generalTexto {
+	padding-top: 10px;
+}
+
+#ini {
+	font-size: 40px;
+}
+
