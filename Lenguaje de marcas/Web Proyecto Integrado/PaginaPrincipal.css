@@ -23,17 +23,15 @@ body {
 	background-image: url(segundaCabecera.jpg);
 }
 
-.nombreEquipo {
-	margin-left: 115px;
-	color: white;
-	font-size: 70px;
-	border-radius: 5px;
+#luda2 {
+	align-content: center;
 }
 
-.nombreEquipo:hover{
-	color: black;
-	font-size: 70px;
-	border-radius: 5px;
+#logo {
+	size: 50%;
+	width: 250px;
+	height: 250px;
+	padding-left: 50px;
 }
 
 
@@ -64,16 +62,6 @@ body {
 
 #botones {
 	margin-top: 10px;
-}
-
-#navegar {
-	list-style: none;
-	margin-right:30px;
-	padding-right: 5px;														
-	margin-left: 30px; 
-	padding-left: 5px;
-	font: bold 14px tines new roman, sans-serif;
-
 }
 
 #seccion2 {
@@ -161,6 +149,7 @@ li:hover {
 #ini {
 	padding-top: 20px;
 	font-size: 40px;
+	font: bold 54px italics, sans-serif;
 }
 
 #text {
