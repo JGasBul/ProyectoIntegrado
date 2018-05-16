@@ -1,0 +1,37 @@
+body {
+	background-image: url(maderaRegistro.jpg);
+}
+
+#general {
+	width: 905px;
+	margin: 15px auto; 
+	text-align: center;	
+}
+
+#cabecera {
+	width: 860px;
+	height: 175px;
+	background-image: url(imagenCabecera.gif);
+	border: 1px solid #999999;
+	padding: 20px;
+	box-shadow: 1px 1px 1px #000000;
+}
+
+#nombre {
+	font: bold 54px verdana, sans-serif;
+	color: white;
+}
+
+#DATOS {
+	text-align: left;
+	padding-left: 50px;
+	color: white;
+	font: bold 14px verdana, sans-serif;
+}
+
+#tabla1 {
+	background-color: white;
+	text-align: left;
+}
+
+
