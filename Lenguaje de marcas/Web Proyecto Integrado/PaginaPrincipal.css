@@ -144,6 +144,7 @@ li:hover {
 
 #generalTexto {
 	padding-top: 10px;
+	width: 
 }
 
 #ini {
@@ -158,4 +159,17 @@ li:hover {
 	text-align: justify;
 	font-color: white;
 
+}
+
+#foto {
+	text-align: center;
+	width: 20%;
+	float: right;
+	margin-right: 200px;
+	margin-top: -275px;
+}
+
+#equipo {
+	width: 200%;
+	box-shadow: 1px 1px 1px white;
 }

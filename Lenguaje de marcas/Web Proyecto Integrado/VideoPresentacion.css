@@ -1,0 +1,24 @@
+body {
+	background-image: url(maderaRegistro.jpg);
+}
+
+#cabecera {
+	width: 860px;
+	height: 175px;
+	background-image: url(imagenCabecera.gif);
+	border: 1px solid #999999;
+	padding: 20px;
+	box-shadow: 1px 1px 1px #000000;
+	align-content: center;
+	text-align: center;
+}
+
+#general {
+	width: 905px;
+	margin: 15px auto; 
+	text-align: center;
+}
+
+#video {
+	margin-top: 50px;
+}
