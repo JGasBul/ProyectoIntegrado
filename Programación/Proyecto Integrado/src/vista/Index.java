@@ -30,8 +30,9 @@ import java.awt.event.MouseEvent;
 public class Index extends JFrame {
 
 	private JPanel contentPane;
-	Informacion f=new Informacion(nom);
-	
+	Informacion f=new Informacion(Login.nom);
+
+
 
 
 	/**
@@ -69,16 +70,22 @@ public class Index extends JFrame {
 
 		JLabel lblUsuario = new JLabel("Usuario: ");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		f.users();
+		JLabel lblUser = new JLabel(f.getUser());
+		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
-		JLabel lblNewLabel = new JLabel(f.getUser());
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel lblDineroTotal = new JLabel("Dinero Total: ");
+		lblDineroTotal.setFont(new Font("Tahoma", Font.PLAIN, 16));
+
+		JLabel label_3 = new JLabel(String.valueOf(f.getSaldoTotal()));
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 						.addContainerGap()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addGroup(gl_contentPane.createSequentialGroup()
 										.addComponent(lblPrueba, GroupLayout.PREFERRED_SIZE, 340, GroupLayout.PREFERRED_SIZE)
 										.addGap(52)
@@ -86,32 +93,39 @@ public class Index extends JFrame {
 										.addGap(118)
 										.addComponent(label_1)
 										.addContainerGap(38, Short.MAX_VALUE))
-								.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+								.addGroup(gl_contentPane.createSequentialGroup()
 										.addComponent(lblElijaLoQue, GroupLayout.PREFERRED_SIZE, 384, GroupLayout.PREFERRED_SIZE)
 										.addGap(229))
 								.addGroup(gl_contentPane.createSequentialGroup()
 										.addComponent(lblUsuario)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(lblNewLabel)
-										.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(lblBienvenidosAlProyecto)
-										.addGap(96))))
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_contentPane.createSequentialGroup()
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(lblUser)
+														.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+														.addComponent(lblBienvenidosAlProyecto)
+														.addGap(96))
+												.addGroup(gl_contentPane.createSequentialGroup()
+														.addGap(280)
+														.addComponent(lblDineroTotal)
+														.addContainerGap())))))
 				);
 		gl_contentPane.setVerticalGroup(
 				gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
+						.addContainerGap()
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addContainerGap(31, Short.MAX_VALUE)
+								.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+										.addComponent(lblDineroTotal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
 										.addComponent(lblBienvenidosAlProyecto)
 										.addPreferredGap(ComponentPlacement.UNRELATED)
 										.addComponent(lblElijaLoQue, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
 										.addGap(18))
 								.addGroup(gl_contentPane.createSequentialGroup()
-										.addContainerGap()
 										.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 												.addComponent(lblUsuario)
-												.addComponent(lblNewLabel))
+												.addComponent(lblUser))
 										.addPreferredGap(ComponentPlacement.RELATED)))
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblPrueba)
