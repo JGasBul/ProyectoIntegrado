@@ -3,7 +3,6 @@ package Modelo;
 Clase que permite validar un DNI.  
 Se crea un objeto del tipo ValidadorDNI y se le pasa un String a validar.
 @return true si DNI es correcto.
-Desarrollado por Manuel Mato.
  */
 
 public class ValidadorDNI
