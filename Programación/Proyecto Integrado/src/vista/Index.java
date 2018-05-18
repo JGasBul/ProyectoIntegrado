@@ -31,9 +31,7 @@ public class Index extends JFrame {
 
 	private JPanel contentPane;
 	Informacion f=new Informacion(Login.nom);
-
-
-
+	Usuario usr=new Usuario();
 
 	/**
 	 * Create the frame.
@@ -47,97 +45,61 @@ public class Index extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel lblBienvenidosAlProyecto = new JLabel("Bienvenidos al proyecto luda2");
+		lblBienvenidosAlProyecto.setBounds(116, 59, 674, 64);
 		lblBienvenidosAlProyecto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBienvenidosAlProyecto.setFont(new Font("SansSerif", Font.PLAIN, 50));
 
 		JLabel lblElijaLoQue = new JLabel("Elija lo que quiere hacer: ");
+		lblElijaLoQue.setBounds(273, 136, 384, 64);
 		lblElijaLoQue.setFont(new Font("Tahoma", Font.PLAIN, 30));
 
-		JLabel lblPrueba = new JLabel("");
-		lblPrueba.addMouseListener(new MouseAdapter() {
+		JLabel lblUserCnf = new JLabel("");
+		lblUserCnf.setBounds(17, 218, 340, 154);
+		lblUserCnf.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-
+				usr.setVisible(true);
+				dispose();
 			}
 		});
-		lblPrueba.setIcon(new ImageIcon(Index.class.getResource("/img/user.png")));
+		lblUserCnf.setIcon(new ImageIcon(Index.class.getResource("/img/user.png")));
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Index.class.getResource("/img/Tragamonedas.png")));
+		JLabel labelTraga = new JLabel("");
+		labelTraga.setBounds(409, 235, 171, 123);
+		labelTraga.setIcon(new ImageIcon(Index.class.getResource("/img/Tragamonedas.png")));
 
-		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(Index.class.getResource("/img/A\u00F1adir Saldo.png")));
+		JLabel labelAñadir = new JLabel("");
+		labelAñadir.setBounds(698, 235, 150, 123);
+		labelAñadir.setIcon(new ImageIcon(Index.class.getResource("/img/A\u00F1adir Saldo.png")));
 
 		JLabel lblUsuario = new JLabel("Usuario: ");
+		lblUsuario.setBounds(17, 18, 65, 20);
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		f.users();
-		JLabel lblUser = new JLabel(f.getUser());
-		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
 		JLabel lblDineroTotal = new JLabel("Dinero Total: ");
+		lblDineroTotal.setBounds(362, 18, 99, 20);
 		lblDineroTotal.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
 		JLabel label_3 = new JLabel(String.valueOf(f.getSaldoTotal()));
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		contentPane.setLayout(null);
+		contentPane.add(lblUserCnf);
+		contentPane.add(labelTraga);
+		contentPane.add(labelAñadir);
+		contentPane.add(lblElijaLoQue);
+		contentPane.add(lblUsuario);
+		contentPane.add(lblBienvenidosAlProyecto);
+		contentPane.add(lblDineroTotal);
 
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(lblPrueba, GroupLayout.PREFERRED_SIZE, 340, GroupLayout.PREFERRED_SIZE)
-										.addGap(52)
-										.addComponent(label)
-										.addGap(118)
-										.addComponent(label_1)
-										.addContainerGap(38, Short.MAX_VALUE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(lblElijaLoQue, GroupLayout.PREFERRED_SIZE, 384, GroupLayout.PREFERRED_SIZE)
-										.addGap(229))
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(lblUsuario)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_contentPane.createSequentialGroup()
-														.addPreferredGap(ComponentPlacement.RELATED)
-														.addComponent(lblUser)
-														.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-														.addComponent(lblBienvenidosAlProyecto)
-														.addGap(96))
-												.addGroup(gl_contentPane.createSequentialGroup()
-														.addGap(280)
-														.addComponent(lblDineroTotal)
-														.addContainerGap())))))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-										.addComponent(lblDineroTotal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-										.addComponent(lblBienvenidosAlProyecto)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(lblElijaLoQue, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-										.addGap(18))
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-												.addComponent(lblUsuario)
-												.addComponent(lblUser))
-										.addPreferredGap(ComponentPlacement.RELATED)))
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblPrueba)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addGap(17)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-												.addComponent(label)
-												.addComponent(label_1))))
-						.addGap(24))
-				);
+		JLabel labelT = new JLabel(String.valueOf(f.getSaldoTotal()));
+		labelT.setBounds(464, 21, 56, 16);
+		contentPane.add(labelT);
 
-		contentPane.setLayout(gl_contentPane);
+		JLabel lblNewLabel = new JLabel(f.getUser());
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setBounds(83, 21, 79, 16);
+		contentPane.add(lblNewLabel);
 
 	}
 }
