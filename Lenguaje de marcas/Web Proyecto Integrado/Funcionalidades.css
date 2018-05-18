@@ -26,7 +26,7 @@ body {
 #nombre {
 	font-size: 40px;
 	font: bold 54px italics, sans-serif;
-	background-image: url(segundaCabecera.jpg);
+	color: white;
 }
 
 #texto1 {
