@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `1ºApellido` varchar(50) NOT NULL,
   `2ºApellido` varchar(50) NOT NULL,
   `UserName` varchar(10) NOT NULL,
-  `Telefono` int(9) NOT NULL,
+  `Telefono` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Contraseña` varchar(50) NOT NULL,
   PRIMARY KEY (`DNI`),

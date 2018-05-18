@@ -29,7 +29,7 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField textNom;
 	private JTextField textPass;
-	public String nom;
+	protected static String nom;
 
 
 	/**

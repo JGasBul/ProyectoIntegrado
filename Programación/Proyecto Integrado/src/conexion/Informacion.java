@@ -130,7 +130,7 @@ public class Informacion {
 				this.seg_Apellido=rs.getString("2ºApellido");
 				this.user=rs.getString("UserName");
 				this.telf=rs.getInt("Telefono");
-				this.eMail=rs.getString("E-mail");
+				this.eMail=rs.getString("Email");
 			}
 			sql = "SELECT * from saldo WHERE DNI='"+this.dni+"'";
 			rs=orden.executeQuery(sql);

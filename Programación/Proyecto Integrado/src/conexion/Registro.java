@@ -31,7 +31,7 @@ public class Registro {
 		con.connectDB();
 		try{
 			orden = (Statement) con.getConexion().createStatement();
-			String sql = "INSERT INTO `tragaperras`.`usuarios` (`DNI`, `Nombre`, `1ºApellido`, `2ºApellido`, `UserName`, `Telefono`, `E-mail`, `Contraseña`) "
+			String sql = "INSERT INTO `tragaperras`.`usuarios` (`DNI`, `Nombre`, `1ºApellido`, `2ºApellido`, `UserName`, `Telefono`, `Email`, `Contraseña`) "
 					+ "VALUES ('"+this.dni+"','"+this.nombre+"','"+this.apellido+"','"+this.seg_Apellido+"','"+this.user+"',"+this.telf+",'"+this.eMail+"','"+this.pass+"')";
 			orden.executeUpdate(sql);
 			System.out.println("Usuario registrado con exito");
