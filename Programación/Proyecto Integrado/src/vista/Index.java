@@ -26,6 +26,9 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JPasswordField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Index extends JFrame {
 
@@ -100,6 +103,18 @@ public class Index extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel.setBounds(83, 21, 79, 16);
 		contentPane.add(lblNewLabel);
+
+		JButton btnCerrarSesin = new JButton("Cerrar Sesi\u00F3n");
+		btnCerrarSesin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Login L=new Login();
+				L.setVisible(true);
+				dispose();
+			}
+		});
+		btnCerrarSesin.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnCerrarSesin.setBounds(745, 21, 134, 25);
+		contentPane.add(btnCerrarSesin);
 
 	}
 }

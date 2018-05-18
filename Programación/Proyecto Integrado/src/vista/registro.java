@@ -104,6 +104,9 @@ public class registro extends JFrame {
 					if(vE.Validar()) {
 						Registro r=new Registro(textEM.getText().trim(),textDNI.getText().trim(),textNom.getText().trim(),textAP1.getText().trim(),textAP2.getText().trim(),textUser.getText().trim(),textpass.getText().trim(),Integer.parseInt(textTlf.getText().trim()));
 						r.insertarUsuario();
+						Login L=new Login();
+						L.setVisible(true);
+						dispose();
 					}
 					else {
 						Error err=new Error();

@@ -15,6 +15,9 @@ import java.awt.Font;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Usuario extends JFrame {
 
@@ -47,45 +50,50 @@ public class Usuario extends JFrame {
 		JLabel lblclicaPara = new JLabel("******** (Clica para editar)");
 		lblclicaPara.setFont(new Font("Tahoma", Font.PLAIN, 24));
 
-		JLabel label_1 = new JLabel("");
+		JButton btnPginaPrincipal = new JButton("P\u00E1gina Principal");
+		btnPginaPrincipal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Index x=new Index();
+				x.setVisible(true);
+				dispose();
+			}
+		});
+		btnPginaPrincipal.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addComponent(lblBienvenidoATu, GroupLayout.PREFERRED_SIZE, 627, GroupLayout.PREFERRED_SIZE)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblBienvenidoATu, GroupLayout.PREFERRED_SIZE, 627, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+						.addContainerGap()
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(lblContrasea)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblclicaPara, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblContrasea)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(lblclicaPara, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(lblUsuario)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 216, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(0, Short.MAX_VALUE))
-		);
+										.addComponent(lblUsuario)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+				.addGroup(gl_contentPane.createSequentialGroup()
+						.addContainerGap()
+						.addComponent(btnPginaPrincipal))
+				);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblBienvenidoATu)
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblBienvenidoATu)
+						.addGap(18)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblUsuario)
 								.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGap(18)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblclicaPara, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblContrasea)))
-						.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(18, Short.MAX_VALUE))
-		);
+								.addComponent(lblContrasea))
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(btnPginaPrincipal)
+						.addContainerGap(17, Short.MAX_VALUE))
+				);
 		contentPane.setLayout(gl_contentPane);
 	}
 }

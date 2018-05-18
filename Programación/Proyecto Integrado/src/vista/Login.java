@@ -59,25 +59,31 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel lblBienvenidosALuda = new JLabel("Bienvenidos a luda2");
+		lblBienvenidosALuda.setBounds(17, 5, 574, 102);
 		lblBienvenidosALuda.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBienvenidosALuda.setFont(new Font("Bookman Old Style", Font.PLAIN, 56));
 
 		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario: ");
+		lblNombreDeUsuario.setBounds(36, 114, 276, 45);
 		lblNombreDeUsuario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombreDeUsuario.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
 
 		textNom = new JTextField();
+		textNom.setBounds(317, 129, 242, 22);
 		textNom.setColumns(10);
 
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a: ");
+		lblContrasea.setBounds(36, 172, 276, 45);
 		lblContrasea.setHorizontalAlignment(SwingConstants.CENTER);
 		lblContrasea.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
 
 		textPass = new JTextField();
+		textPass.setBounds(317, 187, 242, 20);
 		textPass.setFont(new Font("Bookshelf Symbol 7", Font.PLAIN, 13));
 		textPass.setColumns(10);
 
 		JButton btnNewButton = new JButton("Login");
+		btnNewButton.setBounds(154, 235, 107, 41);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 26));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -112,6 +118,7 @@ public class Login extends JFrame {
 		});
 
 		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.setBounds(317, 235, 180, 41);
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				registro r=new registro();
@@ -120,53 +127,13 @@ public class Login extends JFrame {
 			}
 		});
 		btnRegistrarse.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addContainerGap()
-										.addComponent(lblBienvenidosALuda, GroupLayout.PREFERRED_SIZE, 574, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addGap(31)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-														.addGroup(gl_contentPane.createSequentialGroup()
-																.addComponent(lblNombreDeUsuario, GroupLayout.PREFERRED_SIZE, 276, GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.RELATED)
-																.addComponent(textNom, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE))
-														.addGroup(gl_contentPane.createSequentialGroup()
-																.addComponent(lblContrasea, GroupLayout.PREFERRED_SIZE, 276, GroupLayout.PREFERRED_SIZE)
-																.addGap(5)
-																.addComponent(textPass, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)))
-												.addGroup(gl_contentPane.createSequentialGroup()
-														.addGap(153)
-														.addComponent(btnNewButton)
-														.addGap(45)
-														.addComponent(btnRegistrarse)))))
-						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addComponent(lblBienvenidosALuda, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblNombreDeUsuario, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-								.addComponent(textNom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGap(13)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblContrasea, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addGap(15)
-										.addComponent(textPass, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addGap(18)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnNewButton)
-								.addComponent(btnRegistrarse))
-						.addContainerGap(298, Short.MAX_VALUE))
-				);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(lblBienvenidosALuda);
+		contentPane.add(lblNombreDeUsuario);
+		contentPane.add(textNom);
+		contentPane.add(lblContrasea);
+		contentPane.add(btnNewButton);
+		contentPane.add(btnRegistrarse);
+		contentPane.add(textPass);
 	}
 }
