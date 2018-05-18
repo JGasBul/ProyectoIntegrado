@@ -1,0 +1,65 @@
+body {
+	background-image: url(maderaRegistro.jpg);
+}
+
+#general {
+	width: 905px;
+	margin: 15px auto; 
+	text-align: center;	
+}
+
+#cabecera {
+	width: 860px;
+	height: 175px;
+	background-image: url(imagenCabecera.gif);
+	border: 1px solid #999999;
+	padding: 20px;
+	box-shadow: 1px 1px 1px #000000;
+}
+
+#seccion1 {
+	width: 904px;
+	padding-top: 10px;
+	background-image: url(segundaCabecera.jpg);
+}
+
+#nombre {
+	font-size: 40px;
+	font: bold 54px italics, sans-serif;
+	background-image: url(segundaCabecera.jpg);
+}
+
+#texto1 {
+	width: 370px;
+	padding-left: 40px;
+	text-align: justify;
+	font-color: white;
+}
+
+#seccion2 {
+	width: 904px;
+	padding-top: 10px;
+	background-image: url(segundaCabecera.jpg);
+}
+
+#texto2 {
+	width: 370px;
+	float: right;
+	padding-right: 40px;
+	text-align: justify;
+	font-color: white;
+}
+
+#seccion3 {
+	width: 904px;
+	padding-top: 10px;
+	background-image: url(segundaCabecera.jpg);
+}
+
+#texto3 {
+	width: 370px;
+	padding-top: 150px;
+	padding-left: 40px;
+	text-align: justify;
+	font-color: white;
+}
