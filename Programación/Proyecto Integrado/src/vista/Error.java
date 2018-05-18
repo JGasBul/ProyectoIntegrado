@@ -15,22 +15,6 @@ public class Error extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Error frame = new Error();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
 	public Error() {
@@ -40,7 +24,7 @@ public class Error extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
+
 		JLabel lblDniIncorrecto = new JLabel("DNI incorrecto");
 		lblDniIncorrecto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDniIncorrecto.setFont(new Font("Tahoma", Font.PLAIN, 44));
