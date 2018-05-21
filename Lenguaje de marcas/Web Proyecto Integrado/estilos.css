@@ -81,5 +81,12 @@ h1{
 
 #made {
 	background-image: url(segundaCabecera.jpg);
+	height: 600px;
 }
 
+.Botonatras {
+
+	padding-left: 600px;
+	width: 10%;
+
+}

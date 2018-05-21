@@ -88,3 +88,11 @@ h2 span {
 .btn__reset:hover{
 	background-color: #FA9535;
 }
+
+.Botonatras {
+	padding-left: 700px;
+	float: right;
+	text-align: right;
+	width: 10%;
+
+}
