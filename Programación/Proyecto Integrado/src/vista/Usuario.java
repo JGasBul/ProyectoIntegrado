@@ -59,41 +59,53 @@ public class Usuario extends JFrame {
 			}
 		});
 		btnPginaPrincipal.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		
+		JButton btnOpcionesDePago = new JButton("Opciones de pago");
+		btnOpcionesDePago.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnOpcionesDePago.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addComponent(lblBienvenidoATu, GroupLayout.PREFERRED_SIZE, 627, GroupLayout.PREFERRED_SIZE)
 				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(lblContrasea)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(lblclicaPara, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(lblUsuario)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+					.addContainerGap()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblContrasea)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblclicaPara, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblUsuario)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
 				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(btnPginaPrincipal))
-				);
+					.addContainerGap()
+					.addComponent(btnPginaPrincipal)
+					.addGap(18)
+					.addComponent(btnOpcionesDePago))
+		);
 		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-						.addComponent(lblBienvenidoATu)
-						.addGap(18)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblUsuario)
-								.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
-						.addGap(18)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblclicaPara, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblContrasea))
-						.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblBienvenidoATu)
+					.addGap(18)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblUsuario)
+						.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblclicaPara, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblContrasea))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnPginaPrincipal)
-						.addContainerGap(17, Short.MAX_VALUE))
-				);
+						.addComponent(btnOpcionesDePago))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
 		contentPane.setLayout(gl_contentPane);
 	}
 }
