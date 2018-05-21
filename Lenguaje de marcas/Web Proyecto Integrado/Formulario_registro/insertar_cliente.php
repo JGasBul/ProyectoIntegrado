@@ -11,14 +11,14 @@ $Username=$_REQUEST['Username'];
 $Teléfono=$_REQUEST['Teléfono'];
 $Contraseña=$_REQUEST['Contraseña'];
 $Email=$_REQUEST['Email'];
+$Tarjeta_Credito=$_REQUEST['Tarjeta_Credito'];
 
 
 
 
 
 
-$consulta ="INSERT INTO usuarios (DNI,Nombre,1ºApellido,2ºApellido,UserName,Telefono,Email,Contraseña) VALUES ('$DNI','$Nombre', '$Primer_apellido', '$Segundo_apellido', '$Username', '$Teléfono', 
-'$Email','$Contraseña');";
+$consulta ="INSERT INTO usuarios (DNI,Nombre,1ºApellido,2ºApellido,UserName,Telefono,Email,Contraseña,Tarjeta_Credito) VALUES ('$DNI','$Nombre', '$Primer_apellido', '$Segundo_apellido', '$Username', '$Teléfono', '$Email','$Contraseña','$Tarjeta_Credito');";
  ("La instruccion es: $consulta <br>");
  
 if (!$resultado = $mysqli->query($consulta))
