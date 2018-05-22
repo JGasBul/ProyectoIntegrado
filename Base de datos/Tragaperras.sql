@@ -36,6 +36,33 @@ Select saldo.Saldo_Ingresado from tragaperras.saldo WHERE `DNI`= DNI1;
 END//
 DELIMITER ;
 
+CREATE TABLE IF NOT EXISTS `estadisticas` (
+  `DNI` varchar(9) NOT NULL,
+  `Pulsaciones_Botón` int(11) NOT NULL DEFAULT '0',
+  `Pulsaciones_Ganadoras` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`DNI`),
+  CONSTRAINT `User_Estadisticas` FOREIGN KEY (`DNI`) REFERENCES `usuarios` (`DNI`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Pulsaciones`(
+	IN `Ganador` INT
+
+
+,
+	IN `DN1` VARCHAR(9)
+)
+    COMMENT 'False=0, true=1'
+BEGIN
+if Ganador=0 then
+UPDATE estadisticas SET Pulsaciones_Botón=Pulsaciones_Botón+1 WHERE `DNI`=DN1;
+elseif Ganador=1 then
+UPDATE estadisticas SET Pulsaciones_Botón=Pulsaciones_Botón+1 WHERE `DNI`=DN1;
+UPDATE estadisticas SET Pulsaciones_Ganadoras=Pulsaciones_Ganadoras+1 WHERE `DNI`=DN1;
+end if;
+END//
+DELIMITER ;
+
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Restar_Saldo`(
 	IN `Saldo_Rest` DOUBLE
@@ -89,6 +116,7 @@ SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTIT
 DELIMITER //
 CREATE TRIGGER `usuarios_after_insert` AFTER INSERT ON `usuarios` FOR EACH ROW BEGIN
 INSERT INTO `tragaperras`.`saldo` (DNI) VALUES (new.DNI);
+INSERT INTO `tragaperras`.`estadisticas` (DNI) VALUES (new.DNI);
 END//
 DELIMITER ;
 SET SQL_MODE=@OLDTMP_SQL_MODE;
