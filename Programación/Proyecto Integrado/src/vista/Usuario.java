@@ -34,7 +34,7 @@ public class Usuario extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblBienvenidoATu = new JLabel("Bienvenido a tu usuario");
+		JLabel lblBienvenidoATu = new JLabel("Usuario");
 		lblBienvenidoATu.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblBienvenidoATu.setHorizontalAlignment(SwingConstants.CENTER);
 
