@@ -1,5 +1,7 @@
 
 <?php
+
+
 require("index.html");
 	$destino = "luuudaaa2@gmail.com";
 	$nombre = $_POST["Nombre"];
@@ -8,7 +10,8 @@ require("index.html");
 	$mensaje = $_POST["mensaje"];
 	$contenido = "Nombre: " . $nombre . "\n Correo: " . $correo . "\n Teléfono: " . $telefono . "\n Mensaje: " . $mensaje;
 	mail($destino, "Contacto", $contenido);
-	header("Location:gracias.html");
+	
+	header('Location:PaginaPrincipal.html');
 
 
 

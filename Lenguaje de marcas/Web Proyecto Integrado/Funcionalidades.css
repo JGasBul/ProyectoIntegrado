@@ -19,6 +19,7 @@ body {
 
 #seccion1 {
 	width: 904px;
+	height: 870px;
 	padding-top: 10px;
 	background-image: url(segundaCabecera.jpg);
 }
@@ -34,6 +35,12 @@ body {
 	padding-left: 40px;
 	text-align: justify;
 	font-color: white;
+}
+
+
+#img1 {
+	width: 20%;
+	padding-left: 500px;
 }
 
 #seccion2 {
@@ -62,4 +69,13 @@ body {
 	padding-left: 40px;
 	text-align: justify;
 	font-color: white;
+}
+
+.Botonatras {
+
+	padding-right: 10px;
+	float: right;
+	text-align: right;
+	width: 6%;
+
 }
