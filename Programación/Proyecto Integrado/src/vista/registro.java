@@ -49,12 +49,12 @@ public class registro extends JFrame {
 		JLabel lblRegistro = new JLabel();
 		lblRegistro.setFont(new Font("Tahoma", Font.PLAIN, 50));
 
-		JLabel lblNombre = new JLabel();
-		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		JLabel lblDNI = new JLabel();
+		lblDNI.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		JLabel labelDNI = new JLabel();
-		labelDNI.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelDNI.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		JLabel labelNombre = new JLabel();
+		labelNombre.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		JLabel lblapellido = new JLabel();
 		lblapellido.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -78,8 +78,8 @@ public class registro extends JFrame {
 		lblTarjeta.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		if(Login.idioma) {
 			lblRegistro.setText("Sign up");
-			labelDNI.setText("DNI");
-			lblNombre.setText("Name");
+			labelNombre.setText("Name");
+			lblDNI.setText("DNI");
 			lblapellido.setText("First Surname");
 			lblapellido_1.setText("Second Surname");
 			lblUsername.setText("UserName");
@@ -90,8 +90,8 @@ public class registro extends JFrame {
 		}
 		else {
 			lblRegistro.setText("Registro");
-			labelDNI.setText("DNI");
-			lblNombre.setText("Nombre");
+			labelNombre.setText("Nombre");
+			lblDNI.setText("DNI");
 			lblapellido.setText("1º Apellido");
 			lblapellido_1.setText("2º Apellido");
 			lblUsername.setText("Usuario");
@@ -199,8 +199,8 @@ public class registro extends JFrame {
 								.addGroup(gl_contentPane.createSequentialGroup()
 										.addContainerGap()
 										.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-												.addComponent(labelDNI, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-												.addComponent(lblNombre)
+												.addComponent(labelNombre, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblDNI)
 												.addGroup(gl_contentPane.createSequentialGroup()
 														.addComponent(lblapellido)
 														.addPreferredGap(ComponentPlacement.RELATED))
@@ -246,11 +246,11 @@ public class registro extends JFrame {
 						.addComponent(lblRegistro)
 						.addGap(26)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblNombre)
+								.addComponent(lblDNI)
 								.addComponent(textDNI, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(18)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(labelDNI, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+								.addComponent(labelNombre, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 								.addComponent(textNom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(18)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)

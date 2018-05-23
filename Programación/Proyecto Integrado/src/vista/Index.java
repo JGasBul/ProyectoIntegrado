@@ -47,17 +47,23 @@ public class Index extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblBienvenidosAlProyecto = new JLabel("Bienvenidos al proyecto luda2");
+		JLabel lblBienvenidosAlProyecto = new JLabel("Bienvenidos al proyecto Luda2");
+		if (Login.idioma) {
+			lblBienvenidosAlProyecto.setText("Welcome to the project Luda2");
+		}
 		lblBienvenidosAlProyecto.setBounds(116, 59, 674, 64);
 		lblBienvenidosAlProyecto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBienvenidosAlProyecto.setFont(new Font("SansSerif", Font.PLAIN, 50));
 
 		JLabel lblElijaLoQue = new JLabel("Elija lo que quiere hacer: ");
-		lblElijaLoQue.setBounds(273, 136, 384, 64);
+		if (Login.idioma) {
+			lblElijaLoQue.setText("Choose whatever you want");
+		}
+		lblElijaLoQue.setBounds(261, 136, 463, 64);
 		lblElijaLoQue.setFont(new Font("Tahoma", Font.PLAIN, 30));
 
 		JLabel lblUserCnf = new JLabel("");
-		lblUserCnf.setBounds(17, 218, 340, 154);
+		lblUserCnf.setBounds(17, 218, 322, 154);
 		lblUserCnf.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -84,11 +90,17 @@ public class Index extends JFrame {
 		labelAñadir.setIcon(new ImageIcon(Index.class.getResource("/img/A\u00F1adir Saldo.png")));
 
 		JLabel lblUsuario = new JLabel("Usuario: ");
+		if (Login.idioma) {
+			lblUsuario.setText("User: ");
+		}
 		lblUsuario.setBounds(17, 18, 65, 20);
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		f.users();
 
 		JLabel lblDineroTotal = new JLabel("Dinero Total: ");
+		if (Login.idioma) {
+			lblDineroTotal.setText("Money: ");
+		}
 		lblDineroTotal.setBounds(362, 18, 99, 20);
 		lblDineroTotal.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
@@ -113,6 +125,9 @@ public class Index extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		JButton btnCerrarSesin = new JButton("Cerrar Sesi\u00F3n");
+		if (Login.idioma) {
+			btnCerrarSesin.setText("Log out");
+		}
 		btnCerrarSesin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login L=new Login();

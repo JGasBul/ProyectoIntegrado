@@ -84,8 +84,8 @@ public class Login extends JFrame {
 		textPass.setFont(new Font("Bookshelf Symbol 7", Font.PLAIN, 13));
 		textPass.setColumns(10);
 
-		JButton btnNewButton = new JButton("Login");
-		btnNewButton.setBounds(136, 418, 107, 41);
+		JButton btnNewButton = new JButton("Acceder");
+		btnNewButton.setBounds(136, 418, 135, 41);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 26));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -150,6 +150,8 @@ public class Login extends JFrame {
 				lblBienvenidosALuda.setText("Bienvenidos a luda2");
 				lblContrasea.setText("Contraseña");
 				lblNombreDeUsuario.setText("Usuario");
+				btnNewButton.setText("Acceder");
+				btnRegistrarse.setText("Registrarse");
 			}
 		});
 		btnEspaol.setFont(new Font("Tahoma", Font.PLAIN, 26));
@@ -163,6 +165,7 @@ public class Login extends JFrame {
 				lblBienvenidosALuda.setText("Welcome to luda2");
 				lblContrasea.setText("Password");
 				lblNombreDeUsuario.setText("Username");
+				btnNewButton.setText("Log in");
 				btnRegistrarse.setText("Sign up");
 				
 			}
