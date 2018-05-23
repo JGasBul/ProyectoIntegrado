@@ -1,5 +1,5 @@
 <?php
-$servidor = "34.228.255.166";
+$servidor = "34.207.116.94";
 $usuario = "tragaperras";
 $clave ="1234";
 
