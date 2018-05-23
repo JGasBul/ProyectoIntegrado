@@ -45,7 +45,8 @@ public class registro extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblRegistro = new JLabel("Registro");
+		JLabel lblRegistro = new JLabel("DNI");
+		
 		lblRegistro.setFont(new Font("Tahoma", Font.PLAIN, 50));
 
 		JLabel lblNombre = new JLabel("DNI");

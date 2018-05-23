@@ -68,6 +68,14 @@ public class Index extends JFrame {
 		lblUserCnf.setIcon(new ImageIcon(Index.class.getResource("/img/user.png")));
 
 		JLabel labelTraga = new JLabel("");
+		labelTraga.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				TragaMonedas tm=new TragaMonedas();
+				tm.setVisible(true);
+				dispose();
+			}
+		});
 		labelTraga.setBounds(409, 235, 171, 123);
 		labelTraga.setIcon(new ImageIcon(Index.class.getResource("/img/Tragamonedas.png")));
 
