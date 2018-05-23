@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class registro extends JFrame {
 
@@ -40,38 +41,65 @@ public class registro extends JFrame {
 	public registro() {
 		setTitle("LUDA2");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 403, 582);
+		setBounds(100, 100, 442, 545);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblRegistro = new JLabel("DNI");
-		
+		JLabel lblRegistro = new JLabel();
 		lblRegistro.setFont(new Font("Tahoma", Font.PLAIN, 50));
 
-		JLabel lblNombre = new JLabel("DNI");
+		JLabel lblNombre = new JLabel();
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		JLabel label = new JLabel("Nombre");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		JLabel labelDNI = new JLabel();
+		labelDNI.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelDNI.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		JLabel lblapellido = new JLabel("1\u00BAApellido");
+		JLabel lblapellido = new JLabel();
 		lblapellido.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		JLabel lblapellido_1 = new JLabel("2\u00BAApellido");
+		JLabel lblapellido_1 = new JLabel();
 		lblapellido_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		JLabel lblUsername = new JLabel("UserName");
+		JLabel lblUsername = new JLabel();
 		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
+		JLabel lblContrasea = new JLabel();
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		JLabel lblEmail = new JLabel("E-Mail");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		JLabel lblTelefono = new JLabel("Telefono");
+		JLabel lblTelefono = new JLabel();
 		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 20));
+
+		JLabel lblTarjeta = new JLabel();
+		lblTarjeta.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		if(Login.idioma) {
+			lblRegistro.setText("Sign up");
+			labelDNI.setText("DNI");
+			lblNombre.setText("Name");
+			lblapellido.setText("First Surname");
+			lblapellido_1.setText("Second Surname");
+			lblUsername.setText("UserName");
+			lblContrasea.setText("Password");
+			lblTelefono.setText("Phone");
+			lblTarjeta.setText("Credit Card");
+
+		}
+		else {
+			lblRegistro.setText("Registro");
+			labelDNI.setText("DNI");
+			lblNombre.setText("Nombre");
+			lblapellido.setText("1º Apellido");
+			lblapellido_1.setText("2º Apellido");
+			lblUsername.setText("Usuario");
+			lblContrasea.setText("Contraseña");
+			lblTelefono.setText("Teléfono");
+			lblTarjeta.setText("Tarjeta");
+
+		}
 
 		textDNI = new JTextField();
 		textDNI.setColumns(10);
@@ -99,6 +127,12 @@ public class registro extends JFrame {
 		textTlf.setColumns(10);
 
 		JButton btnRegistrarse = new JButton("Registrarse");
+		if(Login.idioma) {
+			btnRegistrarse.setText("Sign Up");
+		}
+		else {
+			btnRegistrarse.setText("Registrarse");
+		}
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ValidadorDNI vD=new ValidadorDNI(textDNI.getText());
@@ -123,7 +157,13 @@ public class registro extends JFrame {
 			}
 		});
 
-		JButton btnRestablecer = new JButton("Restablecer");
+		JButton btnRestablecer = new JButton();
+		if(Login.idioma) {
+			btnRestablecer.setText("Restore");
+		}
+		else {
+			btnRestablecer.setText("Restablecer");
+		}
 		btnRestablecer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textNom.setText("");
@@ -146,9 +186,6 @@ public class registro extends JFrame {
 			}
 		});
 
-		JLabel lblTarjeta = new JLabel("Tarjeta");
-		lblTarjeta.setFont(new Font("Tahoma", Font.PLAIN, 20));
-
 		textTarjeta = new JTextField();
 		textTarjeta.setColumns(10);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -162,7 +199,7 @@ public class registro extends JFrame {
 								.addGroup(gl_contentPane.createSequentialGroup()
 										.addContainerGap()
 										.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-												.addComponent(label, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+												.addComponent(labelDNI, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
 												.addComponent(lblNombre)
 												.addGroup(gl_contentPane.createSequentialGroup()
 														.addComponent(lblapellido)
@@ -213,7 +250,7 @@ public class registro extends JFrame {
 								.addComponent(textDNI, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(18)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(label, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+								.addComponent(labelDNI, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 								.addComponent(textNom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(18)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
