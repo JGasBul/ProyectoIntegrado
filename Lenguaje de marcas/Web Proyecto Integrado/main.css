@@ -58,6 +58,7 @@ h2 span {
 
 .input, .btn__submit, .btn__reset{
 	background-color: #EFEFEF;
+	width: 375px;
 	padding: .5rem;
 	margin: .5rem 0;
 	border: none;

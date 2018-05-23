@@ -173,3 +173,8 @@ li:hover {
 	width: 200%;
 	box-shadow: 1px 1px 1px white;
 }
+
+#icono {
+	width: 10%;
+	float: left;
+}
