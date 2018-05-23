@@ -6,7 +6,7 @@ require ("usarGestion.php");
 $DNI=$_REQUEST['DNI'];
 $Nombre=$_REQUEST['Nombre'];
 $Primer_apellido= $_REQUEST['Primer_apellido'];
-$Segundo_apellido=$_REQUEST['Segundo_Apellido'];
+$Segundo_apellido=$_REQUEST['Segundo_apellido'];
 $Username=$_REQUEST['Username'];
 $Teléfono=$_REQUEST['Teléfono'];
 $Contraseña=$_REQUEST['Contraseña'];
