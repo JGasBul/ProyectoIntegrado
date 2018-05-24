@@ -69,13 +69,14 @@ DELIMITER ;
 
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Restar_Saldo`(
-	IN `Saldo_Rest` DOUBLE
-
-
-,
 	IN `DNI1` VARCHAR(9)
 
 
+
+
+
+,
+	IN `Saldo_Rest` DOUBLE
 
 
 

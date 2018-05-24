@@ -62,8 +62,8 @@ public class OPago extends JFrame {
 				if(isNumeric(textField.getText().trim())) {
 					lblSeHaIntroducido.setVisible(false);
 					double saldo=Double.parseDouble(textField.getText().trim());
-					Gestion g=new Gestion(saldo);
-					g.añadir_saldo();
+					Gestion g=new Gestion();
+					g.añadir_saldo(saldo);
 				}
 				else {
 					lblSeHaIntroducido.setVisible(true);

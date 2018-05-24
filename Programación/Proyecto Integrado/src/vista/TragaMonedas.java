@@ -25,48 +25,16 @@ public class TragaMonedas extends JFrame {
 	 */
 	public TragaMonedas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 929, 696);
+		setBounds(100, 100, 847, 676);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Tragamonedas.png")));
-		lblNewLabel.setBounds(201, 130, 173, 141);
-
-		JLabel label = new JLabel("New label");
-		label.setBounds(375, 130, 173, 141);
-
-		JLabel label_1 = new JLabel("New label");
-		label_1.setBounds(549, 130, 173, 141);
-
-		JLabel label_2 = new JLabel("New label");
-		label_2.setBounds(201, 274, 173, 141);
-
-		JLabel label_3 = new JLabel("New label");
-		label_3.setBounds(375, 274, 173, 141);
-
-		JLabel label_4 = new JLabel("New label");
-		label_4.setBounds(549, 274, 173, 141);
-
-		JLabel label_5 = new JLabel("New label");
-		label_5.setBounds(375, 414, 173, 141);
-
-		JLabel label_6 = new JLabel("New label");
-		label_6.setBounds(549, 414, 173, 141);
-
-		JLabel label_7 = new JLabel("New label");
-		label_7.setBounds(201, 414, 173, 141);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Azul.png")));
+		lblNewLabel.setBounds(221, 89, 125, 125);
 		contentPane.setLayout(null);
 		contentPane.add(lblNewLabel);
-		contentPane.add(label);
-		contentPane.add(label_1);
-		contentPane.add(label_2);
-		contentPane.add(label_3);
-		contentPane.add(label_4);
-		contentPane.add(label_5);
-		contentPane.add(label_6);
-		contentPane.add(label_7);
 
 		JButton btnNum = new JButton("1");
 		btnNum.addActionListener(new ActionListener() {
@@ -86,7 +54,7 @@ public class TragaMonedas extends JFrame {
 			}
 		});
 		btnNum.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnNum.setBounds(200, 561, 97, 51);
+		btnNum.setBounds(231, 466, 97, 51);
 		contentPane.add(btnNum);
 		
 		JButton btnJugar = new JButton("Jugar");
@@ -95,7 +63,47 @@ public class TragaMonedas extends JFrame {
 			}
 		});
 		btnJugar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnJugar.setBounds(531, 561, 97, 51);
+		btnJugar.setBounds(488, 466, 97, 51);
 		contentPane.add(btnJugar);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Rojo2.png")));
+		label.setBounds(342, 89, 125, 125);
+		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Verde.png")));
+		label_1.setBounds(466, 89, 125, 125);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Azul.png")));
+		label_2.setBounds(221, 215, 125, 125);
+		contentPane.add(label_2);
+		
+		JLabel label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Azul.png")));
+		label_3.setBounds(342, 215, 125, 125);
+		contentPane.add(label_3);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Azul.png")));
+		label_4.setBounds(466, 215, 125, 125);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel("");
+		label_5.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Rojo2.png")));
+		label_5.setBounds(221, 340, 125, 125);
+		contentPane.add(label_5);
+		
+		JLabel label_6 = new JLabel("");
+		label_6.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Rojo2.png")));
+		label_6.setBounds(342, 340, 125, 125);
+		contentPane.add(label_6);
+		
+		JLabel label_7 = new JLabel("");
+		label_7.setIcon(new ImageIcon(TragaMonedas.class.getResource("/img/Siete Rojo2.png")));
+		label_7.setBounds(466, 340, 125, 125);
+		contentPane.add(label_7);
 	}
 }

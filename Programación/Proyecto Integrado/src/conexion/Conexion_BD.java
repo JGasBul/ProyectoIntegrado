@@ -28,19 +28,33 @@ public class Conexion_BD {
 	//Constructor (le pasaremos los datos necesarios para la conexión)
 
 	public Conexion_BD(String USER,String PASS) {
-		this.host="34.204.47.187";
+		/*this.host="34.204.47.187";
 		this.bbdd="tragaperras";
 		this.userbd="tragaperras";
 		this.passbd="1234";
 		this.user=USER;
 		this.pass=PASS;
 		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";
+		 */
+		this.host="localhost";
+		this.bbdd="tragaperras";
+		this.userbd="root";
+		this.passbd="";
+		this.user=USER;
+		this.pass=PASS;
+		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";
 	}
 	public Conexion_BD() {
-		this.host="34.204.47.187";
+		/*this.host="34.204.47.187";
 		this.bbdd="tragaperras";
 		this.userbd="tragaperras";
 		this.passbd="1234";
+		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";
+		 */
+		this.host="localhost";
+		this.bbdd="tragaperras";
+		this.userbd="root";
+		this.passbd="";
 		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";
 	}
 
