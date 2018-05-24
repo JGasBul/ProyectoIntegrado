@@ -79,7 +79,7 @@ public class registro extends JFrame {
 		if(Login.idioma) {
 			lblRegistro.setText("Sign up");
 			labelNombre.setText("Name");
-			lblDNI.setText("DNI");
+			lblDNI.setText("ID");
 			lblapellido.setText("First Surname");
 			lblapellido_1.setText("Second Surname");
 			lblUsername.setText("UserName");

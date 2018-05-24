@@ -35,22 +35,41 @@ public class Usuario extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel lblBienvenidoATu = new JLabel("Usuario");
+		if(Login.idioma) {
+			lblBienvenidoATu.setText("Users");
+		}
 		lblBienvenidoATu.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblBienvenidoATu.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JLabel lblUsuario = new JLabel("Usuario: ");
+		if(Login.idioma) {
+			lblUsuario.setText("Usuario: ");
+		}
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 25));
 
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
+		if(Login.idioma) {
+			lblContrasea.setText("Password: ");
+		}
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		f.users();
 		JLabel lblUser = new JLabel(f.getUser()+"(Clica para editar)");
+		if(Login.idioma) {
+			lblUser.setText(f.getUser()+"(Click for edit)");
+		}
 		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 24));
 
 		JLabel lblclicaPara = new JLabel("******** (Clica para editar)");
+		if(Login.idioma) {
+			lblUser.setText("******** (Click for edit)");
+		}
 		lblclicaPara.setFont(new Font("Tahoma", Font.PLAIN, 24));
 
 		JButton btnPginaPrincipal = new JButton("P\u00E1gina Principal");
+		if(Login.idioma) {
+			btnPginaPrincipal.setText("Homepage");
+		}
+
 		btnPginaPrincipal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Index x=new Index();
@@ -61,6 +80,9 @@ public class Usuario extends JFrame {
 		btnPginaPrincipal.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
 		JButton btnOpcionesDePago = new JButton("Opciones de pago");
+		if(Login.idioma) {
+			btnOpcionesDePago.setText("Payment options");
+		}
 		btnOpcionesDePago.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OPago o=new OPago();

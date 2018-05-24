@@ -51,7 +51,7 @@ public class Index extends JFrame {
 		if (Login.idioma) {
 			lblBienvenidosAlProyecto.setText("Welcome to the project Luda2");
 		}
-		lblBienvenidosAlProyecto.setBounds(116, 59, 674, 64);
+		lblBienvenidosAlProyecto.setBounds(79, 59, 712, 64);
 		lblBienvenidosAlProyecto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBienvenidosAlProyecto.setFont(new Font("SansSerif", Font.PLAIN, 50));
 
@@ -59,11 +59,11 @@ public class Index extends JFrame {
 		if (Login.idioma) {
 			lblElijaLoQue.setText("Choose whatever you want");
 		}
-		lblElijaLoQue.setBounds(261, 136, 463, 64);
+		lblElijaLoQue.setBounds(251, 136, 463, 64);
 		lblElijaLoQue.setFont(new Font("Tahoma", Font.PLAIN, 30));
 
 		JLabel lblUserCnf = new JLabel("");
-		lblUserCnf.setBounds(17, 218, 322, 154);
+		lblUserCnf.setBounds(12, 223, 322, 154);
 		lblUserCnf.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -82,11 +82,11 @@ public class Index extends JFrame {
 				dispose();
 			}
 		});
-		labelTraga.setBounds(409, 235, 171, 123);
+		labelTraga.setBounds(374, 235, 171, 142);
 		labelTraga.setIcon(new ImageIcon(Index.class.getResource("/img/Tragamonedas.png")));
 
 		JLabel labelAñadir = new JLabel("");
-		labelAñadir.setBounds(698, 235, 150, 123);
+		labelAñadir.setBounds(664, 235, 150, 142);
 		labelAñadir.setIcon(new ImageIcon(Index.class.getResource("/img/A\u00F1adir Saldo.png")));
 
 		JLabel lblUsuario = new JLabel("Usuario: ");
@@ -99,7 +99,7 @@ public class Index extends JFrame {
 
 		JLabel lblDineroTotal = new JLabel("Dinero Total: ");
 		if (Login.idioma) {
-			lblDineroTotal.setText("Money: ");
+			lblDineroTotal.setText("Cash: ");
 		}
 		lblDineroTotal.setBounds(362, 18, 99, 20);
 		lblDineroTotal.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -138,6 +138,31 @@ public class Index extends JFrame {
 		btnCerrarSesin.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnCerrarSesin.setBounds(745, 21, 134, 25);
 		contentPane.add(btnCerrarSesin);
+
+		JLabel lblUsuarioY = new JLabel("Usuario y configuraciones");
+		lblUsuarioY.setHorizontalAlignment(SwingConstants.CENTER);
+		if (Login.idioma) {
+			lblUsuarioY.setText("User and settings");
+		}
+		lblUsuarioY.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblUsuarioY.setBounds(38, 324, 285, 64);
+		contentPane.add(lblUsuarioY);
+
+		JLabel lblTragaperras = new JLabel("Tragaperras");
+		if (Login.idioma) {
+			lblTragaperras.setText("Slot Machine");
+		}
+		lblTragaperras.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblTragaperras.setBounds(390, 324, 143, 64);
+		contentPane.add(lblTragaperras);
+
+		JLabel lblAadirSaldo = new JLabel("A\u00F1adir Saldo");
+		if (Login.idioma) {
+			lblAadirSaldo.setText("Add Cash");
+		}
+		lblAadirSaldo.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblAadirSaldo.setBounds(674, 324, 143, 64);
+		contentPane.add(lblAadirSaldo);
 
 	}
 }
