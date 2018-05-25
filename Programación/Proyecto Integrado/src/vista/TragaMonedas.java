@@ -52,6 +52,7 @@ public class TragaMonedas extends JFrame {
 	private JLabel lblElijaConCuantas;
 	private JLabel lblElPremioSera;
 	private JLabel lblPorTalCifra;
+	private JLabel lblDinero_Ganado;
 
 
 	/**
@@ -189,6 +190,8 @@ public class TragaMonedas extends JFrame {
 					juego.retencion();
 					if(juego.getnCoincidencias()==3) {
 						lblhasGanado.setVisible(true);
+						lblDinero_Ganado.setText(String.valueOf(juego.getValorPremio()+" €"));
+						lblDinero_Ganado.setVisible(true);
 					}
 					else {
 						lblhasGanado.setVisible(false);
@@ -198,9 +201,12 @@ public class TragaMonedas extends JFrame {
 					juego.tiraPalanca();
 					if(juego.getnCoincidencias()==3) {
 						lblhasGanado.setVisible(true);
+						lblDinero_Ganado.setText(String.valueOf(juego.getValorPremio())+" €");
+						lblDinero_Ganado.setVisible(true);
 					}
 					else {
 						lblhasGanado.setVisible(false);
+						lblDinero_Ganado.setVisible(false);
 					}
 
 				}
@@ -289,24 +295,35 @@ public class TragaMonedas extends JFrame {
 		contentPane.add(lblLuda);
 
 		lblhasGanado = new JLabel("\u00A1HAS GANADO!");
+		if(Login.idioma) {
+			lblhasGanado.setText("You WIN!!");
+		}
 		lblhasGanado.setVisible(false);
 		lblhasGanado.setForeground(Color.RED);
 		lblhasGanado.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblhasGanado.setHorizontalAlignment(SwingConstants.CENTER);
 		lblhasGanado.setBounds(299, 455, 311, 99);
 		contentPane.add(lblhasGanado);
-		
+
 		lblElijaConCuantas = new JLabel("Elija con cuantas fichas jugara: ");
 		lblElijaConCuantas.setBounds(9, 557, 191, 16);
 		contentPane.add(lblElijaConCuantas);
-		
+
 		lblElPremioSera = new JLabel("El premio sera multiplicado");
 		lblElPremioSera.setBounds(9, 592, 188, 16);
 		contentPane.add(lblElPremioSera);
-		
+
 		lblPorTalCifra = new JLabel("por tal cifra");
 		lblPorTalCifra.setBounds(9, 608, 178, 16);
 		contentPane.add(lblPorTalCifra);
+
+		lblDinero_Ganado = new JLabel("100 \u20AC");
+		lblDinero_Ganado.setVisible(false);
+		lblDinero_Ganado.setForeground(Color.RED);
+		lblDinero_Ganado.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblDinero_Ganado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDinero_Ganado.setBounds(343, 557, 230, 66);
+		contentPane.add(lblDinero_Ganado);
 	}
 	public void rulo1(){
 		switch (juego.getPosRulo1()) {
@@ -380,5 +397,4 @@ public class TragaMonedas extends JFrame {
 		break;
 		}
 	}
-
 }

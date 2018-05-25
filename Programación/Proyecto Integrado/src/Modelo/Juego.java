@@ -13,9 +13,10 @@ public class Juego {
 	private double valorTirada;
 	private Gestion gestion;
 	private int ganador;
+	private double valorPremio;
 
 	public Juego(){
-	
+
 		this.posRulo1=5;
 		this.posRulo2=8;
 		this.posRulo3=2;
@@ -68,7 +69,7 @@ public class Juego {
 				posicionRulos=9;
 			}
 			else {
-				
+
 				posicionRulos=0;
 			}
 
@@ -178,7 +179,7 @@ public class Juego {
 
 	}
 	public void otorgarPremio() {
-		double valorPremio=0;
+		valorPremio=0;
 
 		switch (this.posRulo1) {
 		case 0: valorPremio=0.40;
@@ -209,11 +210,11 @@ public class Juego {
 			valorPremio=valorPremio*5;
 		}
 
-		
+
 		gestion.Pulsaciones(ganador, valorPremio);
 	}
 	public double getValorTirada() {
-	
+
 		return valorTirada;
 	}
 	public int getnCoincidencias() {
@@ -247,5 +248,11 @@ public class Juego {
 	public int getPosRulo3() {
 		return posRulo3;
 	}
+
+
+	public double getValorPremio() {
+		return valorPremio;
+	}
+
 
 }
