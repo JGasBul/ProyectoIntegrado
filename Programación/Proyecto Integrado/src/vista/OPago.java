@@ -29,6 +29,8 @@ public class OPago extends JFrame {
 	private JLabel lblSeHaIntroducido;
 	private JButton btnOpcionesDeUsuario;
 	private JButton btnMenuPrincipal;
+	private JLabel lblUsuarioRegistradoCon;
+	private JLabel lblNewLabel;
 	/**
 	 * Create the frame.
 	 */
@@ -81,8 +83,10 @@ public class OPago extends JFrame {
 					double saldo=Double.parseDouble(textField.getText().trim());
 					Gestion g=new Gestion();
 					g.añadir_saldo(saldo);
+					lblNewLabel.setVisible(true);
 				}
 				else {
+					lblNewLabel.setVisible(false);
 					lblSeHaIntroducido.setVisible(true);
 				}
 
@@ -120,7 +124,18 @@ public class OPago extends JFrame {
 			}
 		});
 		btnMenuPrincipal.setBounds(493, 202, 129, 25);
+
+		;
 		contentPane.add(btnMenuPrincipal);
+
+		lblNewLabel = new JLabel("\u00C9xito");
+		if(Login.idioma) {
+			btnMenuPrincipal.setText("Success");
+		}
+		lblNewLabel.setVisible(false);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(213, 206, 254, 16);
+		contentPane.add(lblNewLabel);
 	}
 	public boolean isNumeric(String s) {  
 		return s != null && s.matches("[-+]?\\d*\\.?\\d+");  
