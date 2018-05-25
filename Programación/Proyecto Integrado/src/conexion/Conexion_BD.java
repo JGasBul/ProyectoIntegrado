@@ -28,7 +28,7 @@ public class Conexion_BD {
 	//Constructor (le pasaremos los datos necesarios para la conexión)
 
 	public Conexion_BD(String USER,String PASS) {
-		this.host="34.233.121.81";
+		this.host="luda2server.hopto.org";
 		this.bbdd="tragaperras";
 		this.userbd="tragaperras";
 		this.passbd="1234";
@@ -36,27 +36,15 @@ public class Conexion_BD {
 		this.pass=PASS;
 		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";
 
-		/*this.host="localhost";
-		this.bbdd="tragaperras";
-		this.userbd="root";
-		this.passbd="";
-		this.user=USER;
-		this.pass=PASS;
-		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";*/
+
 	}
 	public Conexion_BD() {
-		this.host="34.233.121.81";
+		this.host="luda2server.hopto.org";
 		this.bbdd="tragaperras";
 		this.userbd="tragaperras";
 		this.passbd="1234";
 		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";
-		/*
-		this.host="localhost";
-		this.bbdd="tragaperras";
-		this.userbd="root";
-		this.passbd="";
-		this.url="jdbc:mysql://"+this.host+"/"+this.bbdd+"?useSSL=false";
-		 */
+
 	}
 
 
@@ -96,7 +84,7 @@ public class Conexion_BD {
 			//Cogemos los usuarios y recorremos la BBDD mientras haya datos
 			while(rs.next()){
 				if(rs.getInt(1)==0) {
-					System.out.println("Usuario incorrecto");
+
 
 				}
 				else {
@@ -106,12 +94,7 @@ public class Conexion_BD {
 
 					while(rs.next()){
 						if(this.pass.equals(rs.getString("Contraseña"))) {
-							System.out.println("Contraseña correcta");
 							x=true;
-						}
-						else {
-							System.out.println("Contraseña incorrecta");
-
 						}
 					}
 				}

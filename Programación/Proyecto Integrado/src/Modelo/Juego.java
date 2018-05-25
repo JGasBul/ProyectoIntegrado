@@ -12,20 +12,21 @@ public class Juego {
 	private int contRetenciones;
 	private double valorTirada;
 	private Gestion gestion;
-	private boolean ganador;
+	private int ganador;
 
-	public void juego(){
+	public Juego(){
+	
 		this.posRulo1=5;
-		this.posRulo2=54;
+		this.posRulo2=9;
 		this.posRulo3=2;
 		this.rulo1=new int[]{1,2,3,4,5,6,7,8,9,10};
 		this.rulo2=new int[]{1,2,3,4,5,6,7,8,9,10};
 		this.rulo3=new int[]{1,2,3,4,5,6,7,8,9,10};
 		this.nCoincidencias=0;
 		this.contRetenciones=0;
-		this.valorTirada=1;
-		gestion=new Gestion();
-		this.ganador=false;
+		this.valorTirada=1.0;
+		this.gestion=new Gestion();
+		this.ganador=0;
 
 	}
 
@@ -67,7 +68,7 @@ public class Juego {
 				posicionRulos=9;
 			}
 			else {
-				System.out.println("error no contemplado");
+				
 				posicionRulos=0;
 			}
 
@@ -108,7 +109,7 @@ public class Juego {
 		}
 
 		if(nCoincidencias==3) {
-			this.ganador=true;
+			this.ganador=1;
 			otorgarPremio();
 
 		}
@@ -153,7 +154,7 @@ public class Juego {
 				posicionRulos=9;
 			}
 			else {
-				System.out.println("error no contemplado");
+				//error no contemplado nos da por defecto la primera posicion
 				posicionRulos=0;
 			}
 			if(posRulo1==posRulo2) {
@@ -208,10 +209,11 @@ public class Juego {
 			valorPremio=valorPremio*5;
 		}
 
-		Gestion g=new Gestion();
-		g.añadir_saldo(valorPremio);
+		
+		gestion.Pulsaciones(ganador, valorPremio);
 	}
 	public double getValorTirada() {
+	
 		return valorTirada;
 	}
 	public int getnCoincidencias() {
@@ -227,7 +229,7 @@ public class Juego {
 	public void setValorTirada(double valorTirada) {
 		this.valorTirada = valorTirada;
 	}
-	public boolean isGanador() {
+	public int getGanador() {
 		return ganador;
 	}
 
@@ -245,22 +247,5 @@ public class Juego {
 	public int getPosRulo3() {
 		return posRulo3;
 	}
-
-
-	public int[] getRulo1() {
-		return rulo1;
-	}
-
-
-	public int[] getRulo2() {
-		return rulo2;
-	}
-
-
-	public int[] getRulo3() {
-		return rulo3;
-	}
-
-
 
 }

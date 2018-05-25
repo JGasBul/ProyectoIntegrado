@@ -24,6 +24,11 @@ public class OPago extends JFrame {
 	private JPanel contentPane;
 	Informacion f=new Informacion(Login.nom);
 	private JTextField textField;
+	private JLabel lblOpcionesDePago;
+	private JLabel lblIntrooduzcaElDinero;
+	private JLabel lblSeHaIntroducido;
+	private JButton btnOpcionesDeUsuario;
+	private JButton btnMenuPrincipal;
 	/**
 	 * Create the frame.
 	 */
@@ -35,7 +40,7 @@ public class OPago extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblOpcionesDePago = new JLabel("Opciones de pago");
+		lblOpcionesDePago = new JLabel("Opciones de pago");
 		if(Login.idioma) {
 			lblOpcionesDePago.setText("Payment options");
 		}
@@ -44,7 +49,7 @@ public class OPago extends JFrame {
 		lblOpcionesDePago.setFont(new Font("Bookman Old Style", Font.PLAIN, 56));
 		contentPane.add(lblOpcionesDePago);
 
-		JLabel lblIntrooduzcaElDinero = new JLabel("Introduzca el dinero que desea introducir: ");
+		lblIntrooduzcaElDinero = new JLabel("Introduzca el dinero que desea introducir: ");
 		if(Login.idioma) {
 			lblIntrooduzcaElDinero.setText("Enter the money you want to enter: ");
 		}
@@ -58,7 +63,7 @@ public class OPago extends JFrame {
 		contentPane.add(textField);
 
 		textField.setColumns(10);
-		JLabel lblSeHaIntroducido = new JLabel("Se ha introducido un caracter no numerico");
+		lblSeHaIntroducido = new JLabel("Se ha introducido un caracter no numerico");
 		if(Login.idioma) {
 			lblSeHaIntroducido.setText("Character not numeric");
 		}
@@ -89,7 +94,7 @@ public class OPago extends JFrame {
 
 		contentPane.add(lblSeHaIntroducido);
 
-		JButton btnOpcionesDeUsuario = new JButton("Opciones de usuario");
+		btnOpcionesDeUsuario = new JButton("Opciones de usuario");
 		if(Login.idioma) {
 			btnOpcionesDeUsuario.setText("User Options");
 		}
@@ -103,7 +108,7 @@ public class OPago extends JFrame {
 		btnOpcionesDeUsuario.setBounds(12, 202, 173, 25);
 		contentPane.add(btnOpcionesDeUsuario);
 
-		JButton btnMenuPrincipal = new JButton("Menu principal");
+		btnMenuPrincipal = new JButton("Menu principal");
 		if(Login.idioma) {
 			btnMenuPrincipal.setText("Main");
 		}

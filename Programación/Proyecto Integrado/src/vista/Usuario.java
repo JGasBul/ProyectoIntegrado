@@ -25,6 +25,13 @@ public class Usuario extends JFrame {
 
 	private JPanel contentPane;
 	Informacion f=new Informacion(Login.nom);
+	private JLabel lblBienvenidoATu;
+	private JLabel lblUsuario;
+	private JLabel lblContrasea;
+	private JLabel lblclicaPara;
+	private JButton btnPginaPrincipal;
+	private JLabel lblUser;
+	private JButton btnOpcionesDePago;
 	/**
 	 * Create the frame.
 	 */
@@ -36,29 +43,32 @@ public class Usuario extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblBienvenidoATu = new JLabel("Usuario");
+		lblBienvenidoATu = new JLabel("Usuario");
 		if(Login.idioma) {
 			lblBienvenidoATu.setText("Users");
 		}
 		lblBienvenidoATu.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblBienvenidoATu.setHorizontalAlignment(SwingConstants.CENTER);
 
-		JLabel lblUsuario = new JLabel("Usuario: ");
+		lblUsuario = new JLabel("Usuario: ");
 		if(Login.idioma) {
 			lblUsuario.setText("Usuario: ");
 		}
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 25));
 
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
+		lblContrasea = new JLabel("Contrase\u00F1a:");
 		if(Login.idioma) {
 			lblContrasea.setText("Password: ");
 		}
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		f.users();
-		JLabel lblUser = new JLabel(f.getUser()+"(Clica para editar)");
+		lblUser = new JLabel(f.getUser()+"(Clica para editar)");
 		lblUser.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				Update up=new Update();
+				up.setVisible(true);
+				dispose();
 			}
 		});
 		if(Login.idioma) {
@@ -66,13 +76,21 @@ public class Usuario extends JFrame {
 		}
 		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 24));
 
-		JLabel lblclicaPara = new JLabel("******** (Clica para editar)");
+		lblclicaPara = new JLabel("******** (Clica para editar)");
+		lblclicaPara.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Update up=new Update();
+				up.setVisible(true);
+				dispose();
+			}
+		});
 		if(Login.idioma) {
 			lblUser.setText("******** (Click for edit)");
 		}
 		lblclicaPara.setFont(new Font("Tahoma", Font.PLAIN, 24));
 
-		JButton btnPginaPrincipal = new JButton("P\u00E1gina Principal");
+		btnPginaPrincipal = new JButton("P\u00E1gina Principal");
 		if(Login.idioma) {
 			btnPginaPrincipal.setText("Homepage");
 		}
@@ -86,7 +104,7 @@ public class Usuario extends JFrame {
 		});
 		btnPginaPrincipal.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
-		JButton btnOpcionesDePago = new JButton("Opciones de pago");
+		btnOpcionesDePago = new JButton("Opciones de pago");
 		if(Login.idioma) {
 			btnOpcionesDePago.setText("Payment options");
 		}

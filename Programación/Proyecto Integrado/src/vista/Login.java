@@ -23,6 +23,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class Login extends JFrame {
 
@@ -31,6 +32,15 @@ public class Login extends JFrame {
 	private JTextField textPass;
 	public static String nom;
 	public static boolean idioma;
+	private JLabel lblBienvenidosALuda;
+	private JLabel lblNombreDeUsuario;
+	private JLabel lblContrasea;
+	private JButton btnNewButton;
+	private JButton btnRegistrarse;
+	private JLabel lblSadfd;
+	private JButton btnEspaol;
+	private JButton btnIngles;
+	private JLabel lblUsuarioOContrasea;
 
 
 	/**
@@ -60,12 +70,12 @@ public class Login extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblBienvenidosALuda = new JLabel("Bienvenidos a luda2");
+		lblBienvenidosALuda = new JLabel("Bienvenidos a luda2");
 		lblBienvenidosALuda.setBounds(12, 71, 574, 102);
 		lblBienvenidosALuda.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBienvenidosALuda.setFont(new Font("Bookman Old Style", Font.PLAIN, 56));
 
-		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario ");
+		lblNombreDeUsuario = new JLabel("Nombre de usuario ");
 		lblNombreDeUsuario.setBounds(30, 302, 276, 45);
 		lblNombreDeUsuario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombreDeUsuario.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
@@ -74,7 +84,7 @@ public class Login extends JFrame {
 		textNom.setBounds(311, 317, 242, 22);
 		textNom.setColumns(10);
 
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a ");
+		lblContrasea = new JLabel("Contrase\u00F1a ");
 		lblContrasea.setBounds(30, 360, 276, 45);
 		lblContrasea.setHorizontalAlignment(SwingConstants.CENTER);
 		lblContrasea.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
@@ -84,7 +94,7 @@ public class Login extends JFrame {
 		textPass.setFont(new Font("Bookshelf Symbol 7", Font.PLAIN, 13));
 		textPass.setColumns(10);
 
-		JButton btnNewButton = new JButton("Acceder");
+		btnNewButton = new JButton("Acceder");
 		btnNewButton.setBounds(136, 418, 135, 41);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 26));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -95,10 +105,13 @@ public class Login extends JFrame {
 				if(nom.equals("Administrador")) {
 					Conectar_WS con=new Conectar_WS(nom,pass);
 					if(con.conect()) {
-
+						lblUsuarioOContrasea.setVisible(false);
 						Index p=new Index();
 						p.setVisible(true);
 						dispose();
+					}
+					else {
+						lblUsuarioOContrasea.setVisible(true);
 					}
 				}
 				else {
@@ -109,9 +122,12 @@ public class Login extends JFrame {
 							p.setVisible(true);
 							dispose();
 						}
+						else {
+							lblUsuarioOContrasea.setVisible(true);
+						}
 					}
 					else {
-						System.out.println("Caca");
+						System.out.println("El servidor no esta disponible ahora mismo. Pida ayuda a un administrador");
 					}
 				}
 
@@ -119,7 +135,7 @@ public class Login extends JFrame {
 			}
 		});
 
-		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.setBounds(299, 418, 180, 41);
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -138,12 +154,12 @@ public class Login extends JFrame {
 		contentPane.add(btnRegistrarse);
 		contentPane.add(textPass);
 
-		JLabel lblSadfd = new JLabel("sadfd");
+		lblSadfd = new JLabel("sadfd");
 		lblSadfd.setIcon(new ImageIcon(Login.class.getResource("/img/logosinfondo.png")));
 		lblSadfd.setBounds(157, 153, 242, 183);
 		contentPane.add(lblSadfd);
 
-		JButton btnEspaol = new JButton("Espa\u00F1ol");
+		btnEspaol = new JButton("Espa\u00F1ol");
 		btnEspaol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				idioma=false;
@@ -160,7 +176,7 @@ public class Login extends JFrame {
 		btnEspaol.setBounds(12, 13, 130, 41);
 		contentPane.add(btnEspaol);
 
-		JButton btnIngles = new JButton("English");
+		btnIngles = new JButton("English");
 		btnIngles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				idioma=true;
@@ -171,11 +187,17 @@ public class Login extends JFrame {
 				lblNombreDeUsuario.setText("Username");
 				btnNewButton.setText("Log in");
 				btnRegistrarse.setText("Sign up");
-				
+
 			}
 		});
 		btnIngles.setFont(new Font("Tahoma", Font.PLAIN, 26));
 		btnIngles.setBounds(154, 13, 130, 41);
 		contentPane.add(btnIngles);
+
+		lblUsuarioOContrasea = new JLabel("Usuario o contrase\u00F1a incorrectos");
+		lblUsuarioOContrasea.setVisible(false);
+		lblUsuarioOContrasea.setForeground(Color.RED);
+		lblUsuarioOContrasea.setBounds(308, 346, 245, 22);
+		contentPane.add(lblUsuarioOContrasea);
 	}
 }

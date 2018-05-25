@@ -18,15 +18,40 @@ import Modelo.Juego;
 import conexion.Gestion;
 import conexion.Informacion;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 public class TragaMonedas extends JFrame {
 
 	private JPanel contentPane;
 	private Juego juego;
 	private Gestion gestion;
 	private Informacion info;
-	JLabel posicion10 = new JLabel("");
-	JLabel posicion11 = new JLabel("");
-	JLabel posicion12 = new JLabel("");
+	private JLabel posicion10 = new JLabel("");
+	private JLabel posicion11 = new JLabel("");
+	private JLabel posicion12 = new JLabel("");
+	private JLabel lblNewLabel;
+	private String strDouble;
+	private JLabel labelT;
+	private JButton btnCerrarSesin;
+	private JButton btnMenuPrincipal;
+	private JButton btnNum;
+	private JButton btnJugar;
+	private JLabel lblUser;
+	private JLabel lblDineroTotal;
+	private JLabel label;
+	private JLabel lblCereza;
+	private JLabel lblUva;
+	private JLabel lblRacimo;
+	private JLabel lblNaranja;
+	private JLabel lblCampana;
+	private JLabel lblSieteVerde;
+	private JLabel lblSieteRojo;
+	private JLabel lblSieteAzul;
+	private JLabel lblDiamante;
+	private JLabel lblLuda;
+	private JLabel lblhasGanado;
+	private JLabel lblElijaConCuantas;
+	private JLabel lblElPremioSera;
+	private JLabel lblPorTalCifra;
 
 
 	/**
@@ -44,16 +69,19 @@ public class TragaMonedas extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JLabel lblNewLabel = new JLabel(info.getUser());
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel.setBounds(83, 21, 79, 16);
+		lblNewLabel = new JLabel(info.getUser());
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		lblNewLabel.setBounds(152, 48, 221, 25);
 		contentPane.add(lblNewLabel);
 
-		JLabel labelT = new JLabel(String.valueOf(info.getSaldoTotal()));
-		labelT.setBounds(464, 21, 56, 16);
+		strDouble = String.format("%.2f", info.getSaldoTotal());
+
+		labelT = new JLabel(String.valueOf(strDouble));
+		labelT.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		labelT.setBounds(620, 48, 115, 25);
 		contentPane.add(labelT);
 
-		JButton btnCerrarSesin = new JButton("Cerrar Sesi\u00F3n");
+		btnCerrarSesin = new JButton("Cerrar Sesi\u00F3n");
 		if (Login.idioma) {
 			btnCerrarSesin.setText("Log out");
 		}
@@ -68,7 +96,7 @@ public class TragaMonedas extends JFrame {
 		btnCerrarSesin.setBounds(747, 48, 134, 25);
 		contentPane.add(btnCerrarSesin);
 
-		JButton btnMenuPrincipal = new JButton("Menu principal");
+		btnMenuPrincipal = new JButton("Menu principal");
 		btnMenuPrincipal.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		if(Login.idioma) {
 			btnMenuPrincipal.setText("Main");
@@ -104,9 +132,9 @@ public class TragaMonedas extends JFrame {
 		contentPane.add(posicion11);
 		contentPane.add(posicion12);
 
-		JButton btnNum = new JButton("1");
-		btnNum.addActionListener(new ActionListener() {
+		btnNum = new JButton("1");
 
+		btnNum.addActionListener(new ActionListener() {
 			private int num=(int)juego.getValorTirada();
 			public void actionPerformed(ActionEvent e) {
 
@@ -124,22 +152,28 @@ public class TragaMonedas extends JFrame {
 					case 5:btnNum.setText("1");this.num=1;
 
 					break;
-					default:num=1;btnNum.setText("1");//Por si tenemos algun error inesperado la variable volvera a su posicion inicial.
+					default:this.num=1;btnNum.setText("1");//Por si tenemos algun error inesperado la variable volvera a su posicion inicial.
 					}
-					juego.setValorTirada(this.num);
+					juego.setValorTirada(num);
 
 				}
 			}
 		});
 		btnNum.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnNum.setBounds(200, 557, 97, 51);
+		btnNum.setBounds(212, 557, 97, 51);
 		contentPane.add(btnNum);
 
-		JButton btnJugar = new JButton("Jugar");
+		btnJugar = new JButton("Jugar");
+		if(Login.idioma) {
+			lblDineroTotal.setText("Play");
+		}
 		btnJugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				info.users();
+				strDouble = String.format("%.2f", info.getSaldoTotal());
+				labelT.setText(String.valueOf(strDouble));
 				int num=(int)juego.getValorTirada();
+
 
 				//System.out.println("Pon mas dinero (LLamar ventana error)");
 
@@ -153,13 +187,27 @@ public class TragaMonedas extends JFrame {
 				}
 				if (juego.getnCoincidencias()==2) {
 					juego.retencion();
+					if(juego.getnCoincidencias()==3) {
+						lblhasGanado.setVisible(true);
+					}
+					else {
+						lblhasGanado.setVisible(false);
+					}
 				}
 				else {
 					juego.tiraPalanca();
+					if(juego.getnCoincidencias()==3) {
+						lblhasGanado.setVisible(true);
+					}
+					else {
+						lblhasGanado.setVisible(false);
+					}
+
 				}
 				rulo1();
 				rulo2();
 				rulo3();
+
 
 
 			}
@@ -168,15 +216,97 @@ public class TragaMonedas extends JFrame {
 		btnJugar.setBounds(624, 561, 97, 51);
 		contentPane.add(btnJugar);
 
-		JLabel lblNewLabel_1 = new JLabel("Usuario: ");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(23, 21, 65, 16);
-		contentPane.add(lblNewLabel_1);
+		lblUser = new JLabel("Usuario: ");
+		if(Login.idioma) {
+			lblUser.setText("User: ");
+		}
+		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblUser.setBounds(23, 21, 139, 66);
+		contentPane.add(lblUser);
 
-		JLabel lblDineroTotal = new JLabel("Dinero Total:");
-		lblDineroTotal.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblDineroTotal.setBounds(358, 21, 106, 16);
+		lblDineroTotal = new JLabel("Dinero Total:");
+
+		if(Login.idioma) {
+			lblDineroTotal.setText("Total cash: ");
+		}
+		lblDineroTotal.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblDineroTotal.setBounds(426, 42, 198, 31);
 		contentPane.add(lblDineroTotal);
+
+		label = new JLabel("Premios: ");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		label.setBounds(23, 168, 97, 25);
+		contentPane.add(label);
+
+		lblCereza = new JLabel("Cereza=0.40\u20AC");
+		lblCereza.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblCereza.setBounds(23, 206, 139, 25);
+		contentPane.add(lblCereza);
+
+		lblUva = new JLabel("Uva=0.80\u20AC");
+		lblUva.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblUva.setBounds(23, 232, 139, 25);
+		contentPane.add(lblUva);
+
+		lblRacimo = new JLabel("Racimo=1.60\u20AC");
+		lblRacimo.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblRacimo.setBounds(23, 259, 139, 25);
+		contentPane.add(lblRacimo);
+
+		lblNaranja = new JLabel("Naranja=2.40\u20AC");
+		lblNaranja.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNaranja.setBounds(23, 285, 139, 25);
+		contentPane.add(lblNaranja);
+
+		lblCampana = new JLabel("Campana=3.20\u20AC");
+		lblCampana.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblCampana.setBounds(23, 310, 149, 25);
+		contentPane.add(lblCampana);
+
+		lblSieteVerde = new JLabel("Siete Verde=4\u20AC");
+		lblSieteVerde.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblSieteVerde.setBounds(23, 336, 149, 25);
+		contentPane.add(lblSieteVerde);
+
+		lblSieteRojo = new JLabel("Siete Rojo=8\u20AC");
+		lblSieteRojo.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblSieteRojo.setBounds(23, 359, 139, 25);
+		contentPane.add(lblSieteRojo);
+
+		lblSieteAzul = new JLabel("Siete Azul=14\u20AC");
+		lblSieteAzul.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblSieteAzul.setBounds(23, 385, 139, 25);
+		contentPane.add(lblSieteAzul);
+
+		lblDiamante = new JLabel("Diamante=20\u20AC");
+		lblDiamante.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDiamante.setBounds(23, 409, 139, 25);
+		contentPane.add(lblDiamante);
+
+		lblLuda = new JLabel("Luda2=100\u20AC");
+		lblLuda.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblLuda.setBounds(23, 434, 139, 25);
+		contentPane.add(lblLuda);
+
+		lblhasGanado = new JLabel("\u00A1HAS GANADO!");
+		lblhasGanado.setVisible(false);
+		lblhasGanado.setForeground(Color.RED);
+		lblhasGanado.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblhasGanado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblhasGanado.setBounds(299, 455, 311, 99);
+		contentPane.add(lblhasGanado);
+		
+		lblElijaConCuantas = new JLabel("Elija con cuantas fichas jugara: ");
+		lblElijaConCuantas.setBounds(9, 557, 191, 16);
+		contentPane.add(lblElijaConCuantas);
+		
+		lblElPremioSera = new JLabel("El premio sera multiplicado");
+		lblElPremioSera.setBounds(9, 592, 188, 16);
+		contentPane.add(lblElPremioSera);
+		
+		lblPorTalCifra = new JLabel("por tal cifra");
+		lblPorTalCifra.setBounds(9, 608, 178, 16);
+		contentPane.add(lblPorTalCifra);
 	}
 	public void rulo1(){
 		switch (juego.getPosRulo1()) {
