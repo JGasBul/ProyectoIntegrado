@@ -17,7 +17,7 @@ public class Juego {
 	public Juego(){
 	
 		this.posRulo1=5;
-		this.posRulo2=9;
+		this.posRulo2=8;
 		this.posRulo3=2;
 		this.rulo1=new int[]{1,2,3,4,5,6,7,8,9,10};
 		this.rulo2=new int[]{1,2,3,4,5,6,7,8,9,10};
