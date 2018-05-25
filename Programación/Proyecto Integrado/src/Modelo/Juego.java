@@ -64,7 +64,7 @@ public class Juego {
 				posicionRulos=8;
 			}
 			else if (ranRulo==200){
-				posicionRulos=10;
+				posicionRulos=9;
 			}
 			else {
 				System.out.println("error no contemplado");
@@ -84,25 +84,22 @@ public class Juego {
 
 		}
 
-		System.out.println(this.rulo1[this.posRulo1]);
-		System.out.println(this.rulo2[this.posRulo2]);
-		System.out.println(this.rulo3[this.posRulo3]);
 
 		comprobarRulos();
 	}
 	public void comprobarRulos() {
-		if(rulo1[posRulo1]==rulo2[posRulo2]) {
-			if(rulo1[posRulo1]==rulo3[posRulo3]) {
+		if(this.posRulo1==this.posRulo2) {
+			if(posRulo1==posRulo3) {
 				nCoincidencias=3; 
 			}
 			else {
 				nCoincidencias=2;
 			}
 		}
-		else if(rulo1[posRulo1]==rulo3[posRulo3]) {
+		else if(posRulo1==posRulo3) {
 			nCoincidencias=2;
 		}
-		else if(rulo2[posRulo2]==rulo3[posRulo3]) {
+		else if(posRulo2==posRulo3) {
 			nCoincidencias=2;
 
 		}
@@ -153,20 +150,20 @@ public class Juego {
 				posicionRulos=8;
 			}
 			else if (ranRulo==200){
-				posicionRulos=10;
+				posicionRulos=9;
 			}
 			else {
 				System.out.println("error no contemplado");
 				posicionRulos=0;
 			}
-			if(rulo1[posRulo1]==rulo2[posRulo2]) {
+			if(posRulo1==posRulo2) {
 				this.posRulo3=posicionRulos;
 			}
-			else if(rulo1[posRulo1]==rulo3[posRulo3]) {
+			else if(posRulo1==posRulo3) {
 				this.posRulo2=posicionRulos;
 
 			}
-			else if(rulo2[posRulo2]==rulo3[posRulo3]) {
+			else if(posRulo2==posRulo3) {
 				this.posRulo1=posicionRulos;
 			}
 			this.contRetenciones++;
@@ -175,32 +172,33 @@ public class Juego {
 		else {
 			this.contRetenciones=0;
 			this.nCoincidencias=0;
+			tiraPalanca();
 		}
 
 	}
 	public void otorgarPremio() {
 		double valorPremio=0;
 
-		switch (this.rulo1[this.posRulo1]) {
-		case 1: valorPremio=0.40;
+		switch (this.posRulo1) {
+		case 0: valorPremio=0.40;
 		break;
-		case 2: valorPremio=0.80;
+		case 1: valorPremio=0.80;
 		break;
-		case 3: valorPremio=1.60;
+		case 2: valorPremio=1.60;
 		break;
-		case 4: valorPremio=2.40;
+		case 3: valorPremio=2.40;
 		break;
-		case 5: valorPremio=3.20;
+		case 4: valorPremio=3.20;
 		break;
-		case 6: valorPremio=4.0;
+		case 5: valorPremio=4.0;
 		break;
-		case 7: valorPremio=8.0;
+		case 6: valorPremio=8.0;
 		break;
-		case 8: valorPremio=14.0;
+		case 7: valorPremio=14.0;
 		break;
-		case 9: valorPremio=20.0;
+		case 8: valorPremio=20.0;
 		break;
-		case 10: valorPremio=100.0;
+		case 9: valorPremio=100.0;
 		break;
 		}
 		if (this.valorTirada==3) {
@@ -210,8 +208,8 @@ public class Juego {
 			valorPremio=valorPremio*5;
 		}
 
-		//acceder a DB y sumar el premio al total del usuario
-		gestion.Pulsaciones(this.ganador, valorPremio);
+		Gestion g=new Gestion();
+		g.añadir_saldo(valorPremio);
 	}
 	public double getValorTirada() {
 		return valorTirada;
@@ -232,6 +230,37 @@ public class Juego {
 	public boolean isGanador() {
 		return ganador;
 	}
+
+
+	public int getPosRulo1() {
+		return posRulo1;
+	}
+
+
+	public int getPosRulo2() {
+		return posRulo2;
+	}
+
+
+	public int getPosRulo3() {
+		return posRulo3;
+	}
+
+
+	public int[] getRulo1() {
+		return rulo1;
+	}
+
+
+	public int[] getRulo2() {
+		return rulo2;
+	}
+
+
+	public int[] getRulo3() {
+		return rulo3;
+	}
+
 
 
 }

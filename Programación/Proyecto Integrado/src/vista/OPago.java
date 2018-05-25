@@ -36,12 +36,18 @@ public class OPago extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblOpcionesDePago = new JLabel("Opciones de pago");
+		if(Login.idioma) {
+			lblOpcionesDePago.setText("Payment options");
+		}
 		lblOpcionesDePago.setBounds(5, 5, 646, 66);
 		lblOpcionesDePago.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOpcionesDePago.setFont(new Font("Bookman Old Style", Font.PLAIN, 56));
 		contentPane.add(lblOpcionesDePago);
 
 		JLabel lblIntrooduzcaElDinero = new JLabel("Introduzca el dinero que desea introducir: ");
+		if(Login.idioma) {
+			lblIntrooduzcaElDinero.setText("Enter the money you want to enter: ");
+		}
 		lblIntrooduzcaElDinero.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblIntrooduzcaElDinero.setBounds(81, 87, 543, 41);
 		contentPane.add(lblIntrooduzcaElDinero);
@@ -53,10 +59,16 @@ public class OPago extends JFrame {
 
 		textField.setColumns(10);
 		JLabel lblSeHaIntroducido = new JLabel("Se ha introducido un caracter no numerico");
+		if(Login.idioma) {
+			lblSeHaIntroducido.setText("Character not numeric");
+		}
 		lblSeHaIntroducido.setVisible(false);
 		lblSeHaIntroducido.setForeground(Color.RED);
 		lblSeHaIntroducido.setBounds(214, 206, 253, 16);
-		JButton btnIntroducir = new JButton("Introducir");
+		JButton btnIntroducir = new JButton("Añadir");
+		if(Login.idioma) {
+			btnIntroducir.setText("Add");
+		}
 		btnIntroducir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(isNumeric(textField.getText().trim())) {
@@ -78,6 +90,9 @@ public class OPago extends JFrame {
 		contentPane.add(lblSeHaIntroducido);
 
 		JButton btnOpcionesDeUsuario = new JButton("Opciones de usuario");
+		if(Login.idioma) {
+			btnOpcionesDeUsuario.setText("User Options");
+		}
 		btnOpcionesDeUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Usuario u=new Usuario();
@@ -89,6 +104,9 @@ public class OPago extends JFrame {
 		contentPane.add(btnOpcionesDeUsuario);
 
 		JButton btnMenuPrincipal = new JButton("Menu principal");
+		if(Login.idioma) {
+			btnMenuPrincipal.setText("Main");
+		}
 		btnMenuPrincipal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Index i=new Index();

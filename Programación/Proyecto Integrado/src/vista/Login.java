@@ -65,7 +65,7 @@ public class Login extends JFrame {
 		lblBienvenidosALuda.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBienvenidosALuda.setFont(new Font("Bookman Old Style", Font.PLAIN, 56));
 
-		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario: ");
+		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario ");
 		lblNombreDeUsuario.setBounds(30, 302, 276, 45);
 		lblNombreDeUsuario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombreDeUsuario.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
@@ -74,7 +74,7 @@ public class Login extends JFrame {
 		textNom.setBounds(311, 317, 242, 22);
 		textNom.setColumns(10);
 
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a: ");
+		JLabel lblContrasea = new JLabel("Contrase\u00F1a ");
 		lblContrasea.setBounds(30, 360, 276, 45);
 		lblContrasea.setHorizontalAlignment(SwingConstants.CENTER);
 		lblContrasea.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
@@ -147,9 +147,11 @@ public class Login extends JFrame {
 		btnEspaol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				idioma=false;
+				textNom.setText("");
+				textPass.setText("");
 				lblBienvenidosALuda.setText("Bienvenidos a luda2");
 				lblContrasea.setText("Contraseña");
-				lblNombreDeUsuario.setText("Usuario");
+				lblNombreDeUsuario.setText("Nombre de usuario");
 				btnNewButton.setText("Acceder");
 				btnRegistrarse.setText("Registrarse");
 			}
@@ -158,10 +160,12 @@ public class Login extends JFrame {
 		btnEspaol.setBounds(12, 13, 130, 41);
 		contentPane.add(btnEspaol);
 
-		JButton btnIngles = new JButton("Ingles");
+		JButton btnIngles = new JButton("English");
 		btnIngles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				idioma=true;
+				textNom.setText("");
+				textPass.setText("");
 				lblBienvenidosALuda.setText("Welcome to luda2");
 				lblContrasea.setText("Password");
 				lblNombreDeUsuario.setText("Username");
@@ -171,7 +175,7 @@ public class Login extends JFrame {
 			}
 		});
 		btnIngles.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		btnIngles.setBounds(154, 13, 107, 41);
+		btnIngles.setBounds(154, 13, 130, 41);
 		contentPane.add(btnIngles);
 	}
 }

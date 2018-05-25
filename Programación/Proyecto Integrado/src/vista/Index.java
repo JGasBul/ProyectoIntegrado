@@ -86,6 +86,15 @@ public class Index extends JFrame {
 		labelTraga.setIcon(new ImageIcon(Index.class.getResource("/img/Tragamonedas.png")));
 
 		JLabel labelAñadir = new JLabel("");
+		labelAñadir.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				OPago o = new OPago();
+				o.setVisible(true);
+				dispose();
+			}
+		});
+		
 		labelAñadir.setBounds(664, 235, 150, 142);
 		labelAñadir.setIcon(new ImageIcon(Index.class.getResource("/img/A\u00F1adir Saldo.png")));
 

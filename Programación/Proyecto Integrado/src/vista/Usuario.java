@@ -18,6 +18,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Usuario extends JFrame {
 
@@ -54,6 +56,11 @@ public class Usuario extends JFrame {
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		f.users();
 		JLabel lblUser = new JLabel(f.getUser()+"(Clica para editar)");
+		lblUser.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+			}
+		});
 		if(Login.idioma) {
 			lblUser.setText(f.getUser()+"(Click for edit)");
 		}
