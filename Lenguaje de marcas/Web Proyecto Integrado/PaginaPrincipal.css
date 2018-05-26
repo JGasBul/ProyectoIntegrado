@@ -179,3 +179,31 @@ li:hover {
 	width: 10%;
 	float: left;
 }
+
+
+#seccion1_ {
+	width: 904px;
+	height: 480px;
+	text-align: center;
+
+	background-image: url(segundaCabecera.jpg);
+}
+
+
+.Botonatras {
+	padding-right: 10px;
+	padding-top: 10px;
+	float: right;
+	text-align: right;
+	width: 8%;
+
+}
+
+#text_ {
+	width: 630px;
+	height: 500px;
+	padding-left: 130px;
+	text-align: center;
+	font-color: white;
+
+}

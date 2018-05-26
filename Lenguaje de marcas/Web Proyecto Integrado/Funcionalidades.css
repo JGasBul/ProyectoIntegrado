@@ -19,7 +19,7 @@ body {
 
 #seccion1 {
 	width: 904px;
-	height: 870px;
+	height: 970px;
 	padding-top: 10px;
 	background-image: url(segundaCabecera.jpg);
 }
@@ -44,7 +44,7 @@ body {
 }
 
 #seccion2 {
-	width: 904px;
+	width: 1004px;
 	padding-top: 10px;
 	background-image: url(segundaCabecera.jpg);
 }
